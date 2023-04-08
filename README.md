@@ -1,2 +1,2 @@
 # GGAPL
- A puzzle game for my daughters
+A simple stupid puzzle game for my daughters

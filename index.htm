@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gigante Gatto Alieno Pasquale Lilaus</title>
+    <link rel="stylesheet" media="all" href="css/style3.css">
+    <link rel="stylesheet" media="screen" href="css/style2.css">
+    <link rel="stylesheet" media="screen" href="css/style1.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+  </head>
+
+<body class="ab-test-experiment-id--17739690375 ab-test-variation-id--17722120414 ab-test-variant page--short free-trial free-trial--default">
+  <div class="modal-container" id="ModalContainer" aria-hidden="true">
+  <div class="modal__header">
+    <div class="modal__controls">
+      <button type="button" class="modal__close" id="CloseModal">
+        <span class="icon" id="CloseIcon">
+          <span class="visuallyhidden">Close</span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="modal" role="dialog" tabindex="-1" aria-labelledby="ModalTitle" aria-modal="true"></div>
+</div>
+
+<div id="PageContainer">
+  <main role="main" id="Main">
+<section class="section section--padding-top-only free-trial__header">
+  <div class="grid free-trial__hero-wrapper">
+    <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
+      <div class="section-heading gutter-bottom">
+        <h2 class="section-heading__heading heading--1 free-trial__text free-trial__heading">G.G.A.P.L.</h2>
+        <p id="title" class="section-heading__subhead heading--2 free-trial__text">Avete trovato la combinazione segreta?</p>
+</div></div>
+
+    <div class="grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-5 grid__item--tablet-up-align-center" id="item_0">
+        <div class="marketing-input-wrapper marketing-input-button-pair">
+          <div class="marketing-input-button-pair__field-wrapper">
+            <input id="code_0" placeholder="Inserisci la combinazione segreta (****)" class="marketing-input-button-pair__input marketing-input marketing-input--floating">
+            <button id="btn_0" class="marketing-button marketing-form__button marketing-input-button-pair__button free-trial__button" name="button" type="submit">Controlla la combinazione!</button>
+          </div>
+        <span class="marketing-form__messages"></span>
+      </div>
+        <p id="feedback_0" class="marketing-form__fallback-cta text-center free-trial__text text-minor gutter-bottom free-trial__fine-print">-</p>
+    </div>
+
+    <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
+      <div class="text-center">
+        <picture class="picture">
+            <img class="hidden" id="img_0" srcset="" alt="">
+          </picture>
+      </div>
+    </div>
+
+    <div class="grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-5 grid__item--tablet-up-align-center hidden" id="item_1">
+        <div class="marketing-input-wrapper marketing-input-button-pair">
+          <div class="marketing-input-button-pair__field-wrapper">
+            <input id="code_1" placeholder="Inserisci la soluzione dell'enigma (***)" class="marketing-input-button-pair__input marketing-input marketing-input--floating">
+            <button id="btn_1" class="marketing-button marketing-form__button marketing-input-button-pair__button free-trial__button" name="button" type="submit">Controlla la soluzione!</button>
+          </div>
+        <span class="marketing-form__messages"></span>
+      </div>
+        <p id="feedback_1" class="marketing-form__fallback-cta text-center free-trial__text text-minor gutter-bottom free-trial__fine-print">-</p>
+      </div>
+
+      <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
+      <div class="text-center">
+        <picture class="picture">
+            <img class="hidden" id="img_1" srcset="" alt="">
+          </picture>
+      </div>
+    </div>
+    </section>
+    
+</div>
+</main>
+</div>
+<script>
+  var _generateStep = function(p_code,p_feedback,p_img_url){
+  var step = {};
+  step.code = p_code;
+  step.feedback = p_feedback;
+  step.img_url = p_img_url;
+  return step;
+}
+
+var _generateItem = function(p_index){
+  var items = {};
+  items.block = document.getElementById("item_"+p_index);
+  items.code = document.getElementById("code_"+p_index);
+  items.btn = document.getElementById("btn_"+p_index);
+  items.img = document.getElementById("img_"+p_index);
+  items.feedback = document.getElementById("feedback_"+p_index);
+  items.title = document.getElementById("title");
+  return items;
+}
+
+var hideMsg = function(){
+  clearInterval(timerID);
+  console.log("CURRENT-STEP " + current_step);
+  if(current_step == 1){
+    UIitems[current_step].code.value = "";
+    UIitems[current_step].img.src = "";
+    UIitems[current_step].feedback.innerHTML = "-";
+    return;
+  }
+  
+  for(var i in UIitems){
+    UIitems[i].code.value = "";
+    UIitems[i].img.src = "";
+    UIitems[i].feedback.innerHTML = "-";
+  }
+}
+
+var checkCode = function(){
+  clearInterval(timerID);
+  timerID = setInterval(hideMsg,3000);
+  var feedback_str = "Mi spiace, provate ad inserire un'altra combinazione!";
+  
+  var curUIItem = UIitems[current_step];
+  var nextUIItem = UIitems[current_step+1];
+  var prevUIItem = UIitems[current_step-1];
+  
+  var code = curUIItem.code;
+  var img = curUIItem.img;
+  var feedback = curUIItem.feedback;
+
+  var code_str = code.value;
+  var cur_step = steps[current_step];
+  if(code_str.split(" ").join("") == cur_step.code ){
+    
+    current_step++;
+
+    if(prevUIItem != null){
+      prevUIItem.img.classList.add("hidden");
+      prevUIItem.img.remove();
+      prevUIItem.feedback.remove();  
+    }
+    
+    if(curUIItem != null){
+      curUIItem.code.classList.add("hidden");
+      curUIItem.btn.classList.add("hidden");
+      curUIItem.img.classList.remove("hidden");
+      
+      curUIItem.code.remove();
+      curUIItem.btn.remove();
+      curUIItem.title.innerHTML = "  ";
+    }
+
+    if(nextUIItem != null){
+      nextUIItem.block.classList.remove("hidden");
+    }
+
+    feedback_str = cur_step.feedback;
+    img.src = cur_step.img_url;
+    
+    clearInterval(timerID);
+  }else{
+    if(code_str == ""){
+      feedback_str = "Dovete scrivere qualcosa, mica è così facile! :-)";
+    } 
+  }
+  feedback.innerHTML = feedback_str;
+}
+
+
+
+//  CONFIGURATION
+var feedback_str_01 = "Bravissime!<BR />Avete inserito il codice corretto!";
+feedback_str_01 += "<br />";
+feedback_str_01 += "Ora dovete risolvere l'enigma sottostante...";
+
+var feedback_str_02 = "<br /><br />Bravissime!<BR />Ecco la soluzione!<br />";
+
+var step1 = _generateStep('4087',feedback_str_01,'img/bg_01.png');
+var step2 = _generateStep('999',feedback_str_02,'img/bg_02.png');
+
+var steps = [step1,step2];
+
+var UIitems = [_generateItem(0),_generateItem(1)];
+
+
+//  INITIALIZATION
+var timerID = null;
+var current_step = 0;
+
+//  INIT UI HANDLERS
+for(var i in UIitems){
+  UIitems[i].code.onfocus = hideMsg;
+  UIitems[i].btn.onclick = checkCode;
+}
+
+</script>
+</body>
+</html>

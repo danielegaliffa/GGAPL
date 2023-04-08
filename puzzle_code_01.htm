@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gigante Gatto Alieno Pasquale Lilaus</title>
+    <link rel="stylesheet" media="all" href="css/style3.css">
+    <link rel="stylesheet" media="screen" href="css/style2.css">
+    <link rel="stylesheet" media="screen" href="css/style1.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+  </head>
+
+<body class="ab-test-experiment-id--17739690375 ab-test-variation-id--17722120414 ab-test-variant page--short free-trial free-trial--default">
+  <div class="modal-container" id="ModalContainer" aria-hidden="true">
+  <div class="modal__header">
+    <div class="modal__controls">
+      <button type="button" class="modal__close" id="CloseModal">
+        <span class="icon" id="CloseIcon">
+          <span class="visuallyhidden">Close</span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="modal" role="dialog" tabindex="-1" aria-labelledby="ModalTitle" aria-modal="true"></div>
+</div>
+
+  
+
+
+<div id="PageContainer">
+  <main role="main" id="Main">
+    
+
+
+<section class="section section--padding-top-only free-trial__header">
+  <div class="grid free-trial__hero-wrapper">
+    <div class="grid__item grid__item--desktop-up-two-thirds grid__item--desktop-up-align-center">
+      <div class="section-heading gutter-bottom">
+        <h2 class="section-heading__heading heading--1 free-trial__text free-trial__heading">G.G.A.P.L.</h2>
+        <div class="section-heading gutter-bottom matrix">
+        <table>
+          <tr>
+            <td>6</td>
+            <td>8</td>
+            <td>2</td>
+            <td></td>
+            <td><img class="point" src="img/rosso.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>1</td>
+            <td>4</td>
+            <td></td>
+            <td><img class="point" src="img/giallo.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>            
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>0</td>
+            <td>6</td>
+            <td></td>
+            <td><img class="point" src="img/giallo.png" /></td>
+            <td><img class="point" src="img/giallo.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>8</td>
+            <td></td>
+            <td><img class="point" src="img/grey.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>0</td>
+            <td></td>
+            <td><img class="point" src="img/giallo.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+            <td><img class="point" src="img/grey.png" /></td>
+          </tr>
+        </table>
+      </div>
+        <p class="section-heading__subhead heading--2 free-trial__text">Hai trovato il codice segreto?</p>
+</div></div>
+    <div class="grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-5 grid__item--tablet-up-align-center">
+        <div class="marketing-input-wrapper marketing-input-button-pair">
+          <div class="marketing-input-button-pair__field-wrapper">
+            <label class="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" for="SignupEmail-b74d">Email</label>
+            <input id="code" placeholder="Inserisci il codice segreto (***)" id="SignupEmail-b74d" class="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]">
+          <button id="btn" class="marketing-button marketing-form__button marketing-input-button-pair__button free-trial__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">Controlla il codice!</button>
+        </div>
+        <span class="marketing-form__messages"></span>
+      </div>
+        <p id="feedback" class="marketing-form__fallback-cta text-center free-trial__text text-minor gutter-bottom free-trial__fine-print">-</p>
+</div>
+    <div class="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-align-center free-trial__hero">
+      <div class="text-center">
+        <picture class="picture">
+            <img id="img" srcset="" alt="">
+          </picture>
+      </div>
+</div></div></section>
+</main>
+</div>
+<script>
+  var puzzleLink = 'https://im-a-puzzle.com/look_i_m_a_math_puzzle_28f17m43c.puzzle';
+  timerID = null;
+  function hideMsg(){
+    clearInterval(timerID);
+    document.getElementById("code").value = "";
+    document.getElementById("img").src = ""
+    feedback.innerHTML = "-";
+  }
+  function checkCode(){
+    clearInterval(timerID);
+    timerID = setInterval(hideMsg,3000);
+    var feedback_str = "Mi spiace, prova ad inserire un'altra combinazione!";
+    var code = document.getElementById("code").value; 
+    if(code.split(" ").join("") == "042" ){
+      feedback_str = "Bravissima!<BR />Hai inserito il codice corretto!";
+      feedback_str += "<br />";
+      feedback_str += "Ora devi risolvere, insieme a tua sorella, <span class='link'><a href='"+puzzleLink+"'>questo puzzle!</a></span>";
+      clearInterval(timerID);
+    }else{
+      if(code == ""){
+        feedback_str = "Devi scrivere qualcosa, mica è così facile! :-)";
+      } 
+    }
+    feedback.innerHTML = feedback_str;
+  }
+  document.getElementById("btn").onclick = checkCode;
+  document.getElementById("code").onfocus = hideMsg;
+</script>
+</body>
+</html>
